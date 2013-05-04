@@ -1,9 +1,10 @@
- <html>
+<html>
 <head>
-	<title>Hora de Dormirc</title>
+	<title>Hora de Dormir</title>
+
+	<meta charset='utf-8'> 
 
 	<script src="jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
-
 	<style type="text/css" media="screen">
 		.sugestaoDormir {
 			display: none;
@@ -15,7 +16,7 @@
 	<h1>Hora de Dormir</h1>
 
 	<div class="horaAcordar">
-		<select name="horas">
+		<select id="horas" name="horas">
 			<option>Horas</option>
 			<script>
 				for (var i=1; i<13; i++) {
@@ -24,7 +25,7 @@
 			</script>
 		</select>
 
-		<select name="minutos">
+		<select id="minutos" name="minutos">
 			<option>Minutos</option>
 			<script>
 				for (var i=0; i<60; i = i + 5) {
@@ -33,8 +34,7 @@
 			</script>
 		</select>
 
-		<select name="periodo">
-			<option>AM/PM</option>
+		<select id="periodo" name="periodo">
 			<option value="AM">AM</option>
 			<option value="PM">PM</option>
 		</select>
@@ -44,16 +44,43 @@
 	</div>
 
 	<div class="sugestaoDormir">
-		<h2>hell yeah, dude!</h2>
+		<h2>Você deveria tentar dormir nestes horários:</h2>
+		<span class="3ciclos"></span> ou
+		<span class="4ciclos"></span> ou
+		<span class="5ciclos"></span> ou
+		<span class="6ciclos"></span>
 	</div>
 
 	<script type="text/javascript" charset="utf-8">
 		var apareceSugestao = function() {
 			$('.sugestaoDormir').fadeIn('slow');
-			$('.sugestaoDormir h2').text('asdasdasd');
+		};
+
+		function addCiclo(date, ciclos) {
+			return new Date(date.getTime() + ciclos*90*60000);
+		};
+
+		function removeCiclo(date, ciclos) {
+			return new Date(date.getTime() - ciclos*90*60000);
 		};
 
 		var sugerirHora = function() {
+			var d = new Date();
+			var horas = parseInt($('#horas').val());
+			var minutos = parseInt($('#minutos').val());
+			var periodo = $('#periodo').val();
+			if (periodo == "PM") {
+				horas = horas + 12
+				horas = horas == 24 ? 0 : horas
+			}
+			d.setUTCDate(d.getUTCDate() + 1)
+			d.setHours(horas);
+			d.setMinutes(minutos);
+			$('.3ciclos').text(removeCiclo(d, 3).toLocaleTimeString());
+			$('.4ciclos').text(removeCiclo(d, 4).toLocaleTimeString());
+			$('.5ciclos').text(removeCiclo(d, 5).toLocaleTimeString());
+			$('.6ciclos').text(removeCiclo(d, 6).toLocaleTimeString());
+			// $('.sugestaoDormir h2').text();
 			$('.horaAcordar').fadeOut('slow', apareceSugestao);
 		};
 
