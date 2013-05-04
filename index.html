@@ -1,0 +1,63 @@
+ <html>
+<head>
+	<title>Hora de Dormirc</title>
+
+	<script src="jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+
+	<style type="text/css" media="screen">
+		.sugestaoDormir {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>Hora de Dormir</h1>
+
+	<div class="horaAcordar">
+		<select name="horas">
+			<option>Horas</option>
+			<script>
+				for (var i=1; i<13; i++) {
+					document.write('<option value="'+ i +'">' + i + '</option>')
+				}
+			</script>
+		</select>
+
+		<select name="minutos">
+			<option>Minutos</option>
+			<script>
+				for (var i=0; i<60; i = i + 5) {
+					document.write('<option value="'+ i +'">' + i + '</option>')
+				}
+			</script>
+		</select>
+
+		<select name="periodo">
+			<option>AM/PM</option>
+			<option value="AM">AM</option>
+			<option value="PM">PM</option>
+		</select>
+
+
+		<input type="button" name="submit" value="Calcular" onclick="sugerirHora()">
+	</div>
+
+	<div class="sugestaoDormir">
+		<h2>hell yeah, dude!</h2>
+	</div>
+
+	<script type="text/javascript" charset="utf-8">
+		var apareceSugestao = function() {
+			$('.sugestaoDormir').fadeIn('slow');
+			$('.sugestaoDormir h2').text('asdasdasd');
+		};
+
+		var sugerirHora = function() {
+			$('.horaAcordar').fadeOut('slow', apareceSugestao);
+		};
+
+	</script>
+
+</body>
+</html>
