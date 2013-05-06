@@ -23,7 +23,7 @@ span {
 #horas:focus, #minutos:focus {
 	outline: none;
 }
-#btCalcular {
+#btCalcularDormir {
 	display: block;
 	margin: 20px auto;
 	background-color: #089EC4;
@@ -35,6 +35,18 @@ span {
 	padding: 20px 160px
 
 }
-.sugestaoDormir {
+#btCalcularAcordar {
+	display: block;
+	margin: 20px auto;
+	background-color: #089EC4;
+	color: #0AC5F4;
+	border: none;
+	border-radius: 10px;
+	font-size: 19px;
+	text-transform: uppercase;
+	padding: 20px 160px
+
+}
+.sugestao {
 	display: none;
 }
