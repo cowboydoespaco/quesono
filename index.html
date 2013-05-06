@@ -2,53 +2,29 @@
 <head>
 	<title>Hora de Dormir</title>
 
-	<meta charset='utf-8'> 
+	<meta charset='utf-8'>
 
 	<script src="jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
-	<style type="text/css" media="screen">
-		.sugestaoDormir {
-			display: none;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
 
 	<h1>Hora de Dormir</h1>
 
-	<div class="horaAcordar">
-		<select id="horas" name="horas">
-			<option>Horas</option>
-			<script>
-				for (var i=1; i<13; i++) {
-					document.write('<option value="'+ i +'">' + i + '</option>')
-				}
-			</script>
-		</select>
-
-		<select id="minutos" name="minutos">
-			<option>Minutos</option>
-			<script>
-				for (var i=0; i<60; i = i + 5) {
-					document.write('<option value="'+ i +'">' + i + '</option>')
-				}
-			</script>
-		</select>
-
-		<select id="periodo" name="periodo">
-			<option value="AM">AM</option>
-			<option value="PM">PM</option>
-		</select>
-
-
-		<input type="button" name="submit" value="Calcular" onclick="sugerirHora()">
-	</div>
+	<form class="horaAcordar">
+		<span>Quero acordar as</span><br>
+		<input type="" id="horas" name="horas">
+		<span>:</span>
+		<input type="" id="minutos" name="minutos">
+		<input id="btCalcular" type="submit" name="submit" value="Calcular">
+	</form>
 
 	<div class="sugestaoDormir">
 		<h2>Você deveria tentar dormir nestes horários:</h2>
-		<span class="3ciclos"></span> ou
-		<span class="4ciclos"></span> ou
-		<span class="5ciclos"></span> ou
-		<span class="6ciclos"></span>
+		<div class="6ciclos"></div> ou
+		<div class="5ciclos"></div> ou
+		<div class="4ciclos"></div> ou
+		<div class="3ciclos"></div>
 	</div>
 
 	<script type="text/javascript" charset="utf-8">
@@ -68,11 +44,6 @@
 			var d = new Date();
 			var horas = parseInt($('#horas').val());
 			var minutos = parseInt($('#minutos').val());
-			var periodo = $('#periodo').val();
-			if (periodo == "PM") {
-				horas = horas + 12
-				horas = horas == 24 ? 0 : horas
-			}
 			d.setUTCDate(d.getUTCDate() + 1)
 			d.setHours(horas);
 			d.setMinutes(minutos);
@@ -83,6 +54,11 @@
 			// $('.sugestaoDormir h2').text();
 			$('.horaAcordar').fadeOut('slow', apareceSugestao);
 		};
+
+		$('.horaAcordar').submit(function() {
+			sugerirHora();
+			return false;
+		});
 
 	</script>
 

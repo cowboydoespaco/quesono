@@ -1,0 +1,40 @@
+body {
+	background: #ADCFDB;
+	background-color: #0AC5F4;
+	color: #FFF;
+	font-family: Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+span {
+	font-size: 50px;
+	line-height: 90px;
+}
+#horas, #minutos {
+	width: 200px;
+	padding: 0px;
+	border: none;
+	border-bottom: 1px #FFF solid;
+	background-color: transparent;
+	font-size: 120px;
+	line-height: 120px;
+	color: #FFF;
+	text-align: center;
+}
+#horas:focus, #minutos:focus {
+	outline: none;
+}
+#btCalcular {
+	display: block;
+	margin: 20px auto;
+	background-color: #089EC4;
+	color: #0AC5F4;
+	border: none;
+	border-radius: 10px;
+	font-size: 19px;
+	text-transform: uppercase;
+	padding: 20px 160px
+
+}
+.sugestaoDormir {
+	display: none;
+}
