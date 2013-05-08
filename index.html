@@ -57,11 +57,9 @@
 
 		var sugerirHoraDormir = function() {
 			var d = new Date();
-			var horas = parseInt($('#horas').val());
-			var minutos = parseInt($('#minutos').val());
-			d.setUTCDate(d.getUTCDate() + 1)
-			d.setHours(horas);
-			d.setMinutes(minutos);
+			d.setUTCDate(d.getUTCDate() + 1);
+			d.setHours(parseInt($('#horas').val()));
+			d.setMinutes(parseInt($('#minutos').val()));
 			$('.sugestao h2').text('Você deveria tentar dormir nestes horários:');
 			$('.3ciclos').text(formatarData(removeCiclo(d, 3)));
 			$('.4ciclos').text(formatarData(removeCiclo(d, 4)));
@@ -81,7 +79,12 @@
 		}
 
 		$('.acordarAs').submit(function() {
-			sugerirHoraDormir();
+			if ((parseInt($('#horas').val()) >= 0 && parseInt($('#horas').val()) <= 23) &&
+				(parseInt($('#minutos').val()) >= 0 && parseInt($('#minutos').val()) <= 59)) {
+				sugerirHoraDormir();
+			} else {
+				$('.acordarAs').append('<p>Digite um horário válido.</p>')
+			}
 			return false;
 		});
 
