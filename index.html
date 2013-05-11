@@ -14,10 +14,11 @@
 	<div class="formularios">
 		<form class="acordarAs">
 			<span>Quero acordar as</span><br>
-			<input type="text" id="horas" min="0" max="23" maxlength="2" name="horas" autocomplete="off">
+			<input type="text" id="horas" class="campo-horario" min="0" max="23" maxlength="2" name="horas" autocomplete="off">
 			<span>:</span>
-			<input type="text" id="minutos" min="0" max="59" maxlength="2" name="minutos" autocomplete="off">
+			<input type="text" id="minutos" class="campo-horario" min="0" max="59" maxlength="2" name="minutos" autocomplete="off">
 			<input id="btCalcularDormir" type="submit" value="Calcular">
+			<p class="erros hidden">Digite um horário válido.</p>
 		</form>
 
 		<form class="dormirAgora">
@@ -26,7 +27,7 @@
 		</form>
 	</div>
 
-	<div class="sugestao">
+	<div class="sugestao hidden">
 		<h2></h2>
 		<div><span class="6ciclos"></span>, dormindo 6 ciclos</div> ou
 		<div><span class="5ciclos"></span>, dormindo 5 ciclos</div> ou
@@ -83,7 +84,7 @@
 				(parseInt($('#minutos').val()) >= 0 && parseInt($('#minutos').val()) <= 59)) {
 				sugerirHoraDormir();
 			} else {
-				$('.acordarAs').append('<p>Digite um horário válido.</p>')
+				$('.erros').slideDown();
 			}
 			return false;
 		});
@@ -91,6 +92,17 @@
 		$('.dormirAgora').submit(function() {
 			sugerirHoraAcordar();
 			return false;
+		});
+
+		$('.campo-horario').keydown(function(e) {
+			var a = [];
+			var k = e.which;
+
+			for (i = 48; i < 58; i++)
+				a.push(i);
+
+			if (!($.inArray(k,a)>=0))
+				e.preventDefault();
 		});
 
 	</script>
