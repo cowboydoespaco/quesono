@@ -5,17 +5,20 @@
 	<meta charset='utf-8'>
 
 	<script src="jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
-
-	<h1>Hora de Dormir</h1>
-
+	<div>
+		<h1>Hora de Dormir</h1>
+	</div>
 	<div class="formularios">
 		<form class="acordarAs">
 			<span>Quero acordar as</span><br>
+			<label for="horas">Horas</label>
 			<input type="text" id="horas" class="campo-horario" min="0" max="23" maxlength="2" name="horas" autocomplete="off">
 			<span>:</span>
+			<label for="minutos">Minutos</label>
 			<input type="text" id="minutos" class="campo-horario" min="0" max="59" maxlength="2" name="minutos" autocomplete="off">
 			<input id="btCalcularDormir" type="submit" value="Calcular">
 			<p class="erros hidden">Digite um horário válido.</p>

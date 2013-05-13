@@ -1,13 +1,56 @@
 body {
-	background: #ADCFDB;
 	background-color: #0AC5F4;
+	background: #ADCFDB;
+	background-color: #6dc6dd;
 	color: #FFF;
 	font-family: Helvetica, Arial, sans-serif;
 	text-align: center;
+	background: #6dc6dd; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #8ddcf0 0%, #6dc6dd 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#8ddcf0), color-stop(100%,#6dc6dd)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #8ddcf0 0%,#6dc6dd 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #8ddcf0 0%,#6dc6dd 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #8ddcf0 0%,#6dc6dd 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #8ddcf0 0%,#6dc6dd 100%); /* W3C */
+}
+h1 {
+	font-family: 'Lato', Helvetica, Arial, serif;
+	text-transform: uppercase;
+	font-size: 21px;
+	font-weight: 400;
+	margin-top: 50px;
+}
+form {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+label {
+	width: 200px;
+	font-family: 'Lato', Helvetica, Arial, serif;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 700;
+	color: #5db8d8;
+	position: absolute;
+	top: 230px;
+}
+.acordarAs:after {
+	content: '';
+	display: block;
+	height: 35px;
+	width: 65%;
+	overflow: hidden;
+	margin: 60px auto 0;
+	-webkit-box-shadow: 0 -15px 15px -10px #5db8d8;
+	-moz-box-shadow: 0 -15px 15px -10px #5db8d8;
+	box-shadow: 0 -15px 15px -10px #5db8d8;
 }
 span {
-	font-size: 50px;
-	line-height: 90px;
+	font-family: 'Lato', Helvetica, Arial, serif;
+	font-size: 45px;
+	font-weight: 400;
+	line-height: 70px;
 }
 #horas, #minutos {
 	width: 200px;
@@ -15,10 +58,13 @@ span {
 	border: none;
 	border-bottom: 1px #FFF solid;
 	background-color: transparent;
+	font-family: 'Lato', Helvetica, Arial, serif;
+	font-weight: 100;
 	font-size: 120px;
 	line-height: 120px;
 	color: #FFF;
 	text-align: center;
+	margin-bottom: 50px;
 }
 #horas:focus, #minutos:focus {
 	outline: none;
@@ -26,11 +72,13 @@ span {
 #btCalcularDormir {
 	display: block;
 	margin: 20px auto;
-	background-color: #089EC4;
-	color: #0AC5F4;
+	background-color: #5db8d8;
+	color: #8ddcf0;
 	border: none;
 	border-radius: 10px;
+	font-family: 'Lato', Helvetica, Arial, serif;
 	font-size: 19px;
+	font-weight: 700;
 	text-transform: uppercase;
 	padding: 20px 160px
 
@@ -38,11 +86,13 @@ span {
 #btCalcularAcordar {
 	display: block;
 	margin: 20px auto;
-	background-color: #089EC4;
-	color: #0AC5F4;
+	background-color: #5db8d8;
+	color: #8ddcf0;
 	border: none;
 	border-radius: 10px;
+	font-family: 'Lato', Helvetica, Arial, serif;
 	font-size: 19px;
+	font-weight: 700;
 	text-transform: uppercase;
 	padding: 20px 160px
 
