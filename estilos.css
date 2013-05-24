@@ -52,7 +52,7 @@ span {
 	font-weight: 400;
 	line-height: 70px;
 }
-#horas, #minutos {
+.campo-horario {
 	width: 200px;
 	padding: 0px;
 	border: none;
@@ -66,10 +66,10 @@ span {
 	text-align: center;
 	margin-bottom: 50px;
 }
-#horas:focus, #minutos:focus {
+.campo-horario {
 	outline: none;
 }
-#btCalcularDormir {
+.btn {
 	display: block;
 	margin: 20px auto;
 	background-color: #5db8d8;
@@ -80,22 +80,9 @@ span {
 	font-size: 19px;
 	font-weight: 700;
 	text-transform: uppercase;
-	padding: 20px 160px
-
-}
-#btCalcularAcordar {
-	display: block;
-	margin: 20px auto;
-	background-color: #5db8d8;
-	color: #8ddcf0;
-	border: none;
-	border-radius: 10px;
-	font-family: 'Lato', Helvetica, Arial, serif;
-	font-size: 19px;
-	font-weight: 700;
-	text-transform: uppercase;
-	padding: 20px 160px
-
+	padding: 20px 160px;
+	cursor: pointer;
+	outline-color: blue;
 }
 .hidden {
 	display: none;

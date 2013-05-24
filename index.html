@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Hora de Dormir</title>
+	<title>QueSono.com</title>
 
 	<meta charset='utf-8'>
 
@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div>
-		<h1>Hora de Dormir</h1>
+		<h1>QueSono.com</h1>
 	</div>
 	<div class="formularios">
 		<form class="acordarAs">
@@ -20,13 +20,13 @@
 			<span>:</span>
 			<label for="minutos">Minutos</label>
 			<input type="text" id="minutos" class="campo-horario" min="0" max="59" maxlength="2" name="minutos" autocomplete="off">
-			<input id="btCalcularDormir" type="submit" value="Calcular">
+			<input id="btCalcularDormir" class="btn" type="submit" value="Calcular">
 			<p class="erros hidden">Digite um horário válido.</p>
 		</form>
 
 		<form class="dormirAgora">
 			<span>Se eu for dormir agora...</span><br>
-			<input id="btCalcularAcordar" type="submit"value="Zzz">
+			<input id="btCalcularAcordar" class="btn" type="submit"value="Zzz">
 		</form>
 	</div>
 
@@ -36,16 +36,25 @@
 		<div><span class="5ciclos"></span>, dormindo 5 ciclos</div> ou
 		<div><span class="4ciclos"></span>, dormindo 4 ciclos</div> ou
 		<div><span class="3ciclos"></span>, dormindo 3 ciclos</div>
+		<input id="btCalcularNovamente" class="btn" type="submit"value="Calcular Novamente">
 		<div class="about">
-			<p>O HORA DE DORMIR decide o horário contando <a href="http://pt.wikipedia.org/wiki/Sono#O_ciclo_do_sono">Ciclos de Sono</a>.</p>
+			<p>O <a href="http://quesono.com/">QueSono.com</a> decide o horário contando <a href="http://pt.wikipedia.org/wiki/Sono#O_ciclo_do_sono">Ciclos de Sono</a>.</p>
 			<p>Acordar <i>durante</i> um ciclo pode te deixar com <i>sensação de cansaço e irritação</i>, mas acordar <i>entre</i> ciclos lhe dá boas chances de começar o dia <i>bem disposto e alerta.</i></p>
 			<p>Uma boa noite de sono é composta de 4 ou 5 ciclos.</p>
 		</div>
 	</div>
 
 	<script type="text/javascript" charset="utf-8">
-		var apareceSugestao = function() {
+		var mostrarSugestao = function() {
 			$('.sugestao').fadeIn('slow');
+		}
+
+		var mostrarForms = function() {
+			$('.formularios').fadeIn('slow');
+		}
+
+		var calcularNovamente = function() {
+			$('.sugestao').fadeOut('slow', mostrarForms);
 		}
 
 		function calculoAcordar(date, ciclos) {
@@ -74,7 +83,7 @@
 			$('.4ciclos').text(formatarData(calculoDormir(d, 4)));
 			$('.5ciclos').text(formatarData(calculoDormir(d, 5)));
 			$('.6ciclos').text(formatarData(calculoDormir(d, 6)));
-			$('.formularios').fadeOut('slow', apareceSugestao);
+			$('.formularios').fadeOut('slow', mostrarSugestao);
 		}
 
 		var sugerirHoraAcordar = function() {
@@ -84,7 +93,7 @@
 			$('.4ciclos').text(formatarData(calculoAcordar(d, 4)));
 			$('.5ciclos').text(formatarData(calculoAcordar(d, 5)));
 			$('.6ciclos').text(formatarData(calculoAcordar(d, 6)));
-			$('.formularios').fadeOut('slow', apareceSugestao);
+			$('.formularios').fadeOut('slow', mostrarSugestao);
 		}
 
 		$('.acordarAs').submit(function() {
@@ -129,6 +138,11 @@
 		});
 
 		$('#horas').focus();
+
+		$('#btCalcularNovamente').click(function() {
+			$('.erros').slideUp();
+			calcularNovamente();
+		});
 
 	</script>
 
