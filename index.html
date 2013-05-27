@@ -76,8 +76,8 @@
 		var sugerirHoraDormir = function() {
 			var d = new Date();
 			d.setUTCDate(d.getUTCDate() + 1);
-			d.setHours(parseInt($('#horas').val()));
-			d.setMinutes(parseInt($('#minutos').val()));
+			d.setHours(parseInt($('#horas').val(), 10));
+			d.setMinutes(parseInt($('#minutos').val(), 10));
 			$('.sugestao h2').text('Você deveria ir deitar nestes horários:');
 			$('.3ciclos').text(formatarData(calculoDormir(d, 3)));
 			$('.4ciclos').text(formatarData(calculoDormir(d, 4)));
@@ -97,8 +97,8 @@
 		}
 
 		$('.acordarAs').submit(function() {
-			if ((parseInt($('#horas').val()) >= 0 && parseInt($('#horas').val()) <= 23) &&
-				(parseInt($('#minutos').val()) >= 0 && parseInt($('#minutos').val()) <= 59)) {
+			if ((parseInt($('#horas').val(), 10) >= 0 && parseInt($('#horas').val(), 10) <= 23) &&
+				(parseInt($('#minutos').val(), 10) >= 0 && parseInt($('#minutos').val(), 10) <= 59)) {
 				sugerirHoraDormir();
 			} else {
 				$('.erros').slideDown();
