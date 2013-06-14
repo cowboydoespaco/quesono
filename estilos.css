@@ -13,18 +13,20 @@ body {
 	background: radial-gradient(ellipse at center,  #8ddcf0 0%,#6dc6dd 100%); /* W3C */
 }
 #header {
+	height: 40px;
 	background-color: #FFF;-webkit-box-shadow: 0 15px 15px -10px #5db8d8;
 	-moz-box-shadow: 0 15px 15px -10px #5db8d8;
 	box-shadow: 0 15px 15px -10px #5db8d8;
 }
 h1 {
+	float: left;
 	color: #6dc6dd;
 	font-family: 'Lato', Helvetica, Arial, serif;
 	text-transform: uppercase;
 	font-size: 18px;
 	font-weight: 700;
+	line-height: 40px;
 	text-align: left;
-	padding: 10px;
 	margin: 0 5%;
 }
 h2 {
