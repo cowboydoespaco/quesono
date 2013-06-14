@@ -9,24 +9,24 @@
 	<link rel="stylesheet" type="text/css" href="estilos.css">
 </head>
 <body>
-	<div>
+	<div id="header">
 		<h1>QueSono.com</h1>
 	</div>
 	<div class="formularios">
 		<form class="acordarAs">
-			<span>Quero acordar as</span><br>
+			<h2>Quero acordar as</h2><br>
 			<label for="horas">Horas</label>
-			<input type="text" id="horas" class="campo-horario" min="0" max="23" maxlength="2" name="horas" autocomplete="off">
+			<input type="text" id="horas" class="campo-horario" maxlength="2" name="horas" autocomplete="off">
 			<span>:</span>
 			<label for="minutos">Minutos</label>
-			<input type="text" id="minutos" class="campo-horario" min="0" max="59" maxlength="2" name="minutos" autocomplete="off">
+			<input type="text" id="minutos" class="campo-horario" maxlength="2" name="minutos" autocomplete="off">
 			<input id="btCalcularDormir" class="btn" type="submit" value="Calcular">
 			<p class="erros hidden">Digite um horário válido.</p>
 		</form>
 
 		<form class="dormirAgora">
-			<span>Se eu for dormir agora...</span><br>
-			<input id="btCalcularAcordar" class="btn" type="submit"value="Zzz">
+			<h2>Se eu for dormir agora...</h2><br>
+			<input id="btCalcularAcordar" class="btn" type="submit" value="Zzz">
 		</form>
 	</div>
 
