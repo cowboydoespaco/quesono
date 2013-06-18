@@ -22,20 +22,20 @@ body {
 }
 h1 {
 	float: left;
+	margin: 0 5%;
 	color: #6dc6dd;
 	font-family: 'Lato', Helvetica, Arial, serif;
-	text-transform: uppercase;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 40px;
 	text-align: left;
-	margin: 0 5%;
+	text-transform: uppercase;
 }
 h2 {
 	clear: both;
 	margin: 0;
 	font-family: 'Lato', Helvetica, Arial, serif;
-	font-size: 45px;
+	font-size: 3em;
 	font-weight: 400;
 	line-height: 70px;
 }
@@ -69,8 +69,6 @@ span {
 	width: 200px;
 	padding: 0px;
 	margin-bottom: 50px;
-	border: none;
-	border-bottom: 1px #FFF solid;
 	font-family: 'Lato', Helvetica, Arial, serif;
 	font-size: 120px;
 	font-weight: 100;
@@ -78,24 +76,29 @@ span {
 	text-align: center;
 	color: #FFF;
 	background-color: transparent;
+	border: none;
+	border-bottom: 1px #FFF solid;
 	outline: none;
 }
 .btn {
 	display: block;
+	height: 65px;
+	width: 400px;
 	margin: 20px auto;
-	background-color: #5db8d8;
-	color: #8ddcf0;
-	border: none;
-	border-radius: 10px;
 	font-family: 'Lato', Helvetica, Arial, serif;
 	font-size: 19px;
 	font-weight: 400;
+	line-height: 65px;
+	text-align: center;
 	text-transform: uppercase;
-	padding: 20px 160px;
+	color: #8ddcf0;
+	background-color: #5db8d8;
 	cursor: pointer;
+	border: none;
+	border-radius: 10px;
 	outline: none;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition:    all 0.2s ease;
+	-moz-transition: all 0.2s ease;
 }
 .btn:hover, .btn:focus {
 	color: #FFF;
@@ -109,31 +112,31 @@ span {
 }
 .sugestao ul {
 	list-style: none;
-	width: 40%;
+	width: 400px;
 	margin: 0 auto;
-	padding: 0;
+	padding: 20px;
 }
 .sugestao ul li {
 	height: 70px;
+	padding: 0 0 0 25px;
 	list-style: none;
-	border-bottom: 1px dotted #FFF;
 	text-align: left;
-	padding-left: 85px;
 	font-family: 'Lato', Helvetica, Arial, serif;
 	font-size: 16px;
 	font-weight: 400;
 	text-transform: uppercase;
 	color: #47a0c0;
+	border-bottom: 1px dotted #FFF;
 }
 .sugestao ul li:last-child {
 	border: none;
 }
 .sugestao span {
+	padding: 0 10px;
 	font-family: 'Lato', Helvetica, Arial, serif;
 	font-size: 46px;
 	font-weight: 400;
 	line-height: 70px;
-	padding: 0 10px;
 	text-transform: none;
 	color: #FFF;
 }
@@ -146,8 +149,8 @@ span {
 	box-shadow: inset 0 15px 15px -10px #5db8d8;
 }
 .about p {
-	font-size: 15px;
 	margin: 0 auto;
+	font-size: 15px;
 	color: #3289a8;
 }
 .about a {
