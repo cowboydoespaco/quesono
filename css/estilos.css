@@ -1,3 +1,9 @@
+/** {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition:    all 0.2s ease;
+  -ms-transition:     all 0.2s ease;
+  -o-transition:      all 0.2s ease;
+}*/
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -27,7 +33,7 @@ body {
 }
 h1 {
 	float: left;
-	margin: 0 5%;
+	margin: 0 0 0 5%;
 	color: #6dc6dd;
 	font-family: 'Lato', Helvetica, Arial, serif;
 	font-size: 18px;
@@ -40,17 +46,20 @@ h1 a {
 	text-decoration: none;
 	color: #6dc6dd;
 }
-h2 {
-	clear: both;
-	margin: 0;
-	font-family: 'Lato', Helvetica, Arial, serif;
-	font-size: 3em;
-	font-weight: 400;
-	line-height: 70px;
+iframe {
+	margin: 0 5% 0 0;
 }
 .google-play {
 	width: 88px;
 	margin: 5px 10px;
+}
+h2 {
+	clear: both;
+	margin: 0;
+	padding: 5px 0;
+	font-family: 'Lato', Helvetica, Arial, serif;
+	font-size: 3em;
+	font-weight: 400;
 }
 form {
 	margin: 0 5%;
@@ -174,3 +183,72 @@ span {
 .about a:hover {
 	text-decoration: underline;
 }
+@media (max-width: 35em) {
+	h2 {
+		font-size: 1.5em;
+	}
+	.campo-horario {
+		width: 40%;
+		margin-bottom: 50px;
+		font-size: 70px;
+		line-height: 70px;
+	}
+	label {
+		width: 40%;
+		font-size: 14px;
+		position: absolute;
+		top: 180px;
+	}
+	span {
+		font-size: 40px;
+		font-weight: 400;
+		line-height: 70px;
+	}
+	.btn {
+		height: 45px;
+		width: 90%;
+		margin: 0 auto;
+		font-size: 16px;
+		line-height: 45px;
+	}
+	.sugestao {
+		padding: 20px 0;
+	}
+	.sugestao ul {
+		width: 90%;
+		padding: 10px 0;
+	}
+	.sugestao ul li {
+		height: 50px;
+		padding: 0;
+		font-size: 12px;
+	}
+	.sugestao span {
+		padding: 0 10px;
+		font-size: 25px;
+		line-height: 50px;
+		text-transform: none;
+		color: #FFF;
+	}
+	.about {
+		clear: both;
+		padding: 30px 0;
+		margin: 40px 5% 0 5%;
+	}
+	.about p {
+		font-size: 12px;
+	}
+}
+@media (max-width: 26em) {
+	h1 {
+		font-size: 15px;
+	}
+	iframe {
+		width: 86px !important;
+	}
+	.google-play {
+		width: 70px;
+		margin: 8px 10px;
+	}
+}
+
