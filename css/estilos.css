@@ -1,13 +1,12 @@
-/** {
-  -webkit-transition: all 0.2s ease;
-  -moz-transition:    all 0.2s ease;
-  -ms-transition:     all 0.2s ease;
-  -o-transition:      all 0.2s ease;
-}*/
 html {
-    font-family: sans-serif;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input[type='submit'] {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;  
 }
 body {
 	height: 100%;
@@ -239,16 +238,20 @@ span {
 		font-size: 12px;
 	}
 }
-@media (max-width: 26em) {
+@media screen and (max-width: 43.75em) {
 	h1 {
 		font-size: 15px;
 	}
 	iframe {
-		width: 86px !important;
+		width: 115px !important;
 	}
 	.google-play {
 		width: 70px;
 		margin: 8px 10px;
 	}
 }
-
+@media screen and (max-width: 400px) {
+	@-ms-viewport {
+		width:320px
+	}
+}
