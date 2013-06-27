@@ -6,7 +6,7 @@ html {
 input[type='submit'] {
    -webkit-appearance: none;
    -moz-appearance: none;
-   appearance: none;  
+   appearance: none;
 }
 body {
 	height: 100%;
@@ -174,13 +174,20 @@ span {
 	font-size: 15px;
 	color: #3289a8;
 }
-.about a {
+.about a, .footer a {
 	color: #3289a8;
 	text-decoration: none;
 	font-weight: bold;
 }
-.about a:hover {
+.about a:hover, .footer a:hover {
 	text-decoration: underline;
+}
+.footer {
+	font-family: 'Lato', Helvetica, Arial, serif;
+	font-size: 14px;
+	font-weight: 400;
+	color: #47a0c0;
+	margin-bottom: 5px;
 }
 @media (max-width: 35em) {
 	h2 {
